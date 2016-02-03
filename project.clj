@@ -5,4 +5,9 @@
                  [io.rkn/conformity "0.4.0"]
                  [org.clojure/tools.cli "0.3.3"]]
   :main net.phobot.datomic.migrator
+  :license {:name "MIT License"
+            :url "http://opensource.org/licenses/MIT"
+            :year 2015
+            :key "mit"}
+  :url "https://github.com/psfblair/datomic-migrator"
   :aot :all)

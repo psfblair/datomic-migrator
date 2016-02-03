@@ -12,7 +12,7 @@
 (defn- migration-filename-filter [] 
   (regex-filename-filter ".*\\.edn$"))
 
-(defn list-migration-files [migration-dir]
+(defn list-edn-files [migration-dir]
   (let [edn-files (-> (clojure.java.io/file migration-dir)
                       (.listFiles (migration-filename-filter)))]
     (->> edn-files (map #(.getAbsolutePath %)) sort)))

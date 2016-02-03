@@ -22,7 +22,7 @@
     (logger-fn "Creating database (if it doesn't exist):" datastore-uri)
     (datomic/create-database datastore-uri)
     (let [connection (datomic/connect datastore-uri)
-          migration-files (edn-lister/list-migration-files migration-dir)]
+          migration-files (edn-lister/list-edn-files migration-dir)]
       (doseq [migration migration-files]
         (logger-fn "Processing migration file (if not already processed):" migration)
         (run-migration connection migration)))))

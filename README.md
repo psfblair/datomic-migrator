@@ -47,7 +47,7 @@ Within any given migration file, dependencies must be specified using the
 ```
 The MIT License (MIT)
 
-Copyright (c) 2015 Yannick Scherer
+Copyright (c) 2016 Paul Blair
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

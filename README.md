@@ -1,17 +1,27 @@
 # data-store-migration
 
 A Clojure library designed to manage Datomic data stores, primarily by running
-schema migrations. It uses the Conformity library for running data migrations. 
+schema migrations. It wraps the Conformity library for running data migrations. 
 
 ## Usage
 
-A standalone executable jar can be created using `lein uberjar`. If this jar is 
-run from the command line, it assumes by default that migrations are in 
-a directory with the relative path `schema-and-ref-data`. Code can also pass in
-the directory containing the migrations to the `run-migrations` function.
+The main method of `net.phobot.datomic.migrator` will run migrations against a
+Datomic database whose URL may be specified using a command-line argument. The 
+command line also accepts a `-s` or `--schema-dir` option indicating the directory 
+where the migration files are to be found. If this option is not specified, the 
+default value is a subdirectory of the current working directory, named 
+`schema-and-ref-data`. After the migrations are run from the command line,
+`datomic/shutdown` is called to clean up resources. To create a standalone 
+executable jar, use `lein uberjar`.
 
-The project also assumes that migrations are named with a naming schema that 
-ensures proper sort order.
+This library can also be called from other code using the `run-migration` 
+function, which accepts as arguments the URL of the database, the directory 
+containing the migrations, and a function to accept logging statements. When
+this function is called, the `datomic/shutdown` method is not called after the
+migrations finish.
+
+The project assumes that migrations are named with a naming schema that 
+ensures proper sort order, and will run them in sort order..
 
 ## Migrations
 

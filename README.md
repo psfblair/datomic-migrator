@@ -1,4 +1,4 @@
-# data-store-migration
+# datomic-migration
 
 A Clojure library designed to manage Datomic data stores, primarily by running
 schema migrations. It wraps the Conformity library for running data migrations. 

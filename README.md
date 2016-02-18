@@ -1,5 +1,7 @@
 # datomic-migrator
 
+![](https://clojars.org/net.phobot.datomic/migrator/latest-version.svg)
+
 A Clojure library designed to manage Datomic data stores, primarily by running
 schema migrations. It wraps the Conformity library for running data migrations. 
 

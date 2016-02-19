@@ -28,7 +28,7 @@
     (logger-fn "Creating database (if it doesn't exist):" datastore-uri)
     (datomic/create-database datastore-uri)
     (let [connection (datomic/connect datastore-uri)]
-      (migrate connection migration-dir logger-fn))))
+      (run-migrations connection migration-dir logger-fn))))
         
 (def cli-options
   [ ["-s" "--schema-dir DIR" "Directory where migration files may be found"

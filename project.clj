@@ -1,4 +1,4 @@
-(defproject net.phobot.datomic/migrator "2.1.0"
+(defproject net.phobot.datomic/migrator "2.1.1"
   :description "Tool for running database migrations for Gravy databases."
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [com.datomic/datomic-pro "0.9.5344"]

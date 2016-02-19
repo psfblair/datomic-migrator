@@ -9,10 +9,10 @@
     (reify java.io.FilenameFilter
       (accept [_ dir name] (not (nil? (re-find regex name)))))))
 
-(defn- migration-filename-filter [] 
+(defn- edn-filename-filter [] 
   (regex-filename-filter ".*\\.edn$"))
 
-(defn list-edn-files [migration-dir]
-  (let [edn-files (-> (clojure.java.io/file migration-dir)
-                      (.listFiles (migration-filename-filter)))]
+(defn list-edn-files [edn-dir]
+  (let [edn-files (-> (clojure.java.io/file edn-dir)
+                      (.listFiles (edn-filename-filter)))]
     (->> edn-files (map #(.getAbsolutePath %)) sort)))
